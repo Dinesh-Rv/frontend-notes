@@ -1,7 +1,9 @@
 Notes:
 1.
-call stack - Where all the Gec are kept 
-Gec - Global execution context
+call stack { 
+    Where all the Gec are kept
+    [call stack(global execution context)] 
+Gec - Global execution context will be known as ananymous
 Componentes in GEC memory and code
 Phases{
  p1 Memory creation phase occures befor executing single line
@@ -10,3 +12,155 @@ Phases{
 brand new execution context after a function is invoked
 
 2.
+conole.log in gec
+window and this {
+    window- global object which is created along with the gec
+    js code -> run -> global object -> gec -> along(this)
+}    
+this {
+    object -> refers to object
+    alone -> global object
+    function -> global object
+    event -> element that recvd the event
+}
+Global Space {
+    Code in the js which is not inside the function
+}
+
+console.log(window.a = a = this.a)
+
+3.
+js- loosely typed language/ weakly typed language
+
+4. Scope chain
+Creted when gec -> ec is created
+Lexical environment - local memory along with the lexical environment of its parent
+Lexical- term in inhierarchy/ in sequence
+c -> b -> a
+The chain of lexical environment is known as scope chain, which lets to know that the variable is pesent or not
+
+5. Let and Const
+Let isnt hoisted like var
+Let will not be stored at the global in the beginning like var did
+temporal dead zone known as script
+Temporal dead zone -> {
+    Will create another context for variables which not yet assigned
+    will ends if the variable got assigned to a value
+    Accessing a undefined variable in the temporal dead zone will give:
+        Uncaught Reference Error 
+}
+Let and Const will be present on a in separate storage
+Doesnt lets to initialize value again if we did:
+    Already initialized
+Const -> Same rules like let but it is stricter
+    const with no initialization:
+        Missing Initizer in const declaration
+Errors in variable {
+Syntax error -> for const variable if its not assigned on the same line in the initialization
+                         for let variable when we try to declare the same let variable again
+Type error -> assigning the const variable again
+Reference error -> when js finds hard to find reference for a variable before initialization
+                              when the variable isnt defined       
+}
+
+Const -  Unchangable
+let - temporal dead zone
+var - in certain circunstances
+
+add declarisation and initialization in the top area to get rid of errors occured by temporal dead zone
+
+
+6. Block scope and shadowing in js
+    Block - {Curly braces} Compound Statement -  Combine multiple js statements in one group
+    Block Scope - What are the variables and functions we can access inside the block
+    Shadoing - Same name variable outside the block (var a=10;)//{var a = 100 }
+    let !-//> var but var -true//> let
+
+7. Closure
+    Closure is a function bind together with its lexical environment / bundled with its lexical environment or scope
+
+Closures are created every time a function is created.
+closure(lexical scope(function())) - 
+
+Function along with its lexical scope forms a bundle known as closure
+
+ return function y() { ...... }  = function y() { ..... } return y
+[
+function x() {
+    var a = 7;
+    function y() {
+        console.log(a);
+    }
+    y();
+}
+x();
+] - >{
+    > closure (x)
+        a: 7
+}
+
+uses of closure:
+    module design pattern
+    currying
+    functions like once
+    memoize
+    maintaining state in async world
+    set timeouts
+    Iterators
+
+8. Closure pt 2
+    setTimeout :- It takes the callback function and attachches a timer of 3k milliseconds and stores it somewhere
+
+ 9. First Class Functions   
+    Function Statement & Function Declaration:-
+        function a() {
+            console.log("dinesh");
+        }
+       // Can be called before or after applying a function
+
+    Function Expression:-
+        var b = function () {
+            console.log("dinesh");
+        }
+       // Because of hoisting b is said as to be a variable so that
+           it can only called after the function expression has been set
+
+    Anonymous Function:-
+        function() {
+           console.log("dinesh");
+        }
+        gives syntax error  ->  without defining into a variable
+
+    Named Function Expression:-
+        var b = function name() {
+            console.log("dinesh");
+        }
+        gives uncaught ref: not defined error when we try to call the method initialized to the local variable
+
+    Diff bwt Parameter & Arguments:-
+                      parameters---> 
+       function xyz(param1, param2) {}
+            arguments--->
+       xyz(1,3);
+
+    First Class Functions:-
+    The ability of functions to be used as values and can be passed as arguments to another function and returned from the functions is known as first class functions in js.
+
+In short, ability to be used like values
+
+    Arow Functions:-
+    Es6 - ECMAScript 2015
+    
+
+10. Callback Functions
+
+ 
+    function x(y) {
+
+    }
+    x(function y() {
+   
+    });
+    
+
+
