@@ -1,0 +1,12 @@
+Notes:
+1.
+call stack - Where all the Gec are kept 
+Gec - Global execution context
+Componentes in GEC memory and code
+Phases{
+ p1 Memory creation phase occures befor executing single line
+ p2 Code execution phase
+}
+brand new execution context after a function is invoked
+
+2.
