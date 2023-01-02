@@ -109,7 +109,7 @@ uses of closure:
     Iterators
 
 8. Closure pt 2
-    setTimeout :- It takes the callback function and attachches a timer of 3k milliseconds and stores it somewhere
+    setTimeout :- It takes the callback function and attachches a timer of selected milliseconds and stores it somewhere
 
  9. First Class Functions   
     Function Statement & Function Declaration:-
@@ -162,5 +162,18 @@ In short, ability to be used like values
    
     });
     
+11. Dom Selectors
+DOM -> Document Object Model - tree structure representation created by the browser 
+-> Each entry in the tree called a node
+Programming Interface that allows us to create, change or remove elements from a awebsite document.
+    -> getElementByTagName()
+    -> getElementByClassName()
+    -> getElementById()
+    -> querySelector()
+    -> querySelectorAll()
 
+12. JS Datatypes
+1. String 2.Number 3.Bigint 4.Boolean 5.Undefined 6.Null 7.Symbol 8. Object
+1. Object 2. Array 3.Date
 
+13. Lexical Scope
