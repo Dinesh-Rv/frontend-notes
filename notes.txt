@@ -177,3 +177,4 @@ Programming Interface that allows us to create, change or remove elements from a
 1. Object 2. Array 3.Date
 
 13. Lexical Scope
+
