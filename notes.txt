@@ -151,17 +151,6 @@ In short, ability to be used like values
     Arow Functions:-
     Es6 - ECMAScript 2015
     
-
-10. Callback Functions
-
- 
-    function x(y) {
-
-    }
-    x(function y() {
-   
-    });
-    
 11. Dom Selectors
 DOM -> Document Object Model - tree structure representation created by the browser 
 -> Each entry in the tree called a node
@@ -176,5 +165,29 @@ Programming Interface that allows us to create, change or remove elements from a
 1. String 2.Number 3.Bigint 4.Boolean 5.Undefined 6.Null 7.Symbol 8. Object
 1. Object 2. Array 3.Date
 
-13. Lexical Scope
+13. Callback Functions
+    gives the power of asyncrounity
+    asynchronous, non one by one
+    adding a function inside a function parameter
+ 
+    function x(y) {
+    }
+    x(function y() {
+   
+    });
+Event listeners are heavy
+good practice to remove event listeners
+    
+14. async js and event loop
+call stack is a immediate, doesn't wait for no one, a call stack doesnt have a timer
+call stack has access to various stuff ----!!Remarkable invention!!----
+web api: contains global object "window"
+Web api: not a part of js - superpowers
+-> Set Timeout - 
+-> Dom Api- "document."
+-> fetch
+-> localStorage
+-> console
+-> location
+
 
