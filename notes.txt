@@ -189,5 +189,128 @@ Web api: not a part of js - superpowers
 -> localStorage
 -> console
 -> location
+Event Loop:- 
+-> Tho job of the EL Is to check the callback queue and puts the function in the callback queue inside the call stack
+-> Continuously monitor the call stack as well as callback queue
+---
+[
+console.log("Start");                   <--- logged first
 
+setTimeout(function cb () {         <--- inside the callback queue
+  console.log("CallBack");               <-- log inside the callback function (logged third)
+} 5000);                                         <---timer of 5000 ms aka 5sec
+ 
+console.log("End");                    <- logged second
+]
 
+console
+[
+Start
+End
+CallBack
+]
+
+callback queue [ (cb)        ]
+---
+fetch() :- 
+-> Goes and requests a api call
+-> fetch function returns a promise (.then)
+-> we have to pass a callback function which will be executed once the promise is resolved ( When we get this data it will execute the function )
+---
+-> micro task queue and callback queue 
+-> Promises and mutation observer goes inside the microtask queue
+-> other callback function will goes inside call back queue
+-> Task queue = callback Queue
+-> callback functions in case of promises goes to the microtask queue
+-> micro task queue has higher priority than callback queue
+-> Even loop listens to the callback queue when all the microtasks in the microtask queue has completed until they are empty
+---
+Mutation Observer:-
+keeps on checking if there is a mutation in the dom tree
+if there is a mutation in dom tree then it executes the callback function
+---
+Starvation of the callback queue
+
+15. Js Engine
+JRE- Javascript Runtime Environment
+JS Engine-
+ECMAScript-
+node.js 
+
+steps in js engine
+Code -> (ToKeNs) -> Parsing -> Compilation -> Execution
+parsing stage:-
+    syntax parser
+    Ast - Abstract syntax tree
+compilation stage:-
+    JIT Compilation - Just in time compilation
+    Usage of interpretter and compiler for the same code, while being fastly executed and being effiecint
+    Interpretter:- Taskes the code and start executing one line by line. Fastly Executed
+    Compiler:- Whole code compiled before executed and creates a optimized version of the code, Efficient
+Js can behave like both interpretter and compiler
+Browser cant wait for compile
+Modren browser engine uses both interpretter and compiler
+                --> 
+compiler         interpretter
+               <--
+Aot- ahead of time compilation
+Execution stage:-
+interpretter converts the high level code to byte code and that code moves to execution steps
+while using the optimization of code using compiler phase by phase
+execution components: 
+    -memory heap : space where all the memory is stored /where assigned
+      garbage collector: mark and sweep algorithm
+    -call stack : contains execution context and stuffs
+
+Google v8 js engine:
+Ingition- Intepreter
+Turbofan- Compiler
+Orinoco, Oil Pan- Garbage Colectors
+
+Js Souce Code -> Parser -> Abstract Syntax Tree ----
+                                                                                    |
+compiler(Turbofan)      <----    Interpreter(ignition)<-
+          |                                                |
+Optimized machine      ---->        ByteCode
+code
+
+-mark & sweep
+-Inlining 
+-copy elision
+- inline caching
+-concurrency model
+
+16. Higher order functions and functional programming
+[].map(); -to map value one to one
+[].filter(); - to filer elements in the array
+[].reduce(); - iterates the function based upon the number of values in the array, accumulator and current value as parameter
+
+DISCUSSION:
+- Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+
+17. Callback Pros and Cons:
+ -> Using callback we can achieve asynchronous operations  in js, where we can execute a function in later point of time
+ -> Callback hell- one callback inside another callback and goes on more unmaintainable (Pyramid of doom).
+Inversion of control:-
+   The problem in which the Developer will loose the control of their code while using callbacks
+
+18. Promises:
+Promise: Placeholder for a certain period of time until we receive a value for asynchrounous operation,
+    -> A container for a future value
+    ->MDN about Promise: Promise is an object representing the eventual completion or failure of an asynchrounous operation
+-> Used to handle async operations in js
+fetch() -  returns us a promise
+-promise state -  what state the promise in
+        Types of states in promise:
+               -> Pending - initial state, not fullfilled nor rejected
+               -> Fullfilled - Operation was completed successfully
+               -> Rejected - The operation has failed
+-promise result - will store the data the fetch method return
+-promise objects are immutable
+const promise = fetch(......some);
+
+promise.then(...callbackfunction..)
+
+callbackfunction() {
+   ... lines of code....
+}
