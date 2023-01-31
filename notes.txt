@@ -288,6 +288,26 @@ code
 DISCUSSION:
 - Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
 
+Epic gist to refresh concepts:
+Hoisting: 
+Js hoisitng refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+
+Async/ Await:
+It simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It makes sure that a promise is returned and if it is not returned then Js automatically wraps it in a promise which is resolved with its value. Await is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
+
+Scope: 
+Scope refers to the availability or accessibility of the variable and functions in our code. When you declare a variable outside any function or in the root script then that function or variable becomes global so you can access that from any part of your code but if you declare it inside a function or inside a block ({-block-}) then that variable can be accessed inside that function or that block only.
+
+Callbacks:
+Callbacksare nothing but the arguments of a function but instead of variable its a function. A callback function is simply a function passed into another function as an argument, which is then invoked inside the outer function.
+
+Promises:
+A promise is simply a placeholder for an asynchronous task which is yet to be completed. When you define a promise object in your script, instead of returning a value immediately, it returns a promise
+
+------X--------
+Asynchrony:
+ Js engine doesn't run in isolation. It runs inside a hosting environment
+
 17. Callback Pros and Cons:
  -> Using callback we can achieve asynchronous operations  in js, where we can execute a function in later point of time
  -> Callback hell- one callback inside another callback and goes on more unmaintainable (Pyramid of doom).
@@ -314,3 +334,44 @@ promise.then(...callbackfunction..)
 callbackfunction() {
    ... lines of code....
 }
+
+Async and await:
+Async amd await make promises easier to write
+
+async makes a function return a promise
+await makes a function wait for a promise
+
+
+-30/1/2023-
+
+Angular CLI- 
+-> Command line interface tool that use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell
+-> Helps developers to create projects easily and quickly, 
+-> Built on top of Node.js, installed from the NPM.
+
+-31/1/2023
+
+THIS OR That - (**Please ignore naming conventions)
+->If "this" really confuses like hell for you, it nothing but a object representing itself
+-> This is actually a binding that is made when a function is invoked , and what it references is determined entirely by the call-site where the function is called
+-> Function borrowing: we can borrow functions from other objects and use it with the data of some other objects
+->Call: invokes the function and allows you to pass in arguments one by one.
+            function.call(thisRepresentation, "Extra argument");
+->Apply: invokes the function, allowing you to pass in areguments as an array.
+               function.apply(thisRepresentation, ["Extra argument", "Extra 2" ]);
+->Bind: returns a new function, allowing you to pass in a this array and any number of arguments
+             let variableHoldsFunction = function.bind(thisRepresentation);
+             variableHoldsFunction();
+When to use:
+Call and apply are interchangable
+like normal args vs. array args
+Call and apply will execute the current function immediately
+which makes Bind unique
+Bind reurns a new function, like we can really use if the function could return the desired value we can use the bind function to make a function to be holded to a variable, such that in execution the this/itself will executed will be runned later with the desired this/itself value.
+
+The part where Mr.this will be a real pain:
+Call site: 
+The location where the function is called (not where its declared).
+To find what mr.This will be refencing to will be determined by inspecting the call site
+
+
