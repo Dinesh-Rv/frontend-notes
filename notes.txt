@@ -351,7 +351,7 @@ Angular CLI-
 
 -31/1/2023
 
-THIS OR That - (**Please ignore naming conventions)
+THIS OR That - (**Please ignore naming conventions) chapter 1 and 2
 ->If "this" really confuses like hell for you, it nothing but a object representing itself
 -> This is actually a binding that is made when a function is invoked , and what it references is determined entirely by the call-site where the function is called
 -> Function borrowing: we can borrow functions from other objects and use it with the data of some other objects
@@ -372,6 +372,83 @@ Bind reurns a new function, like we can really use if the function could return 
 The part where Mr.this will be a real pain:
 Call site: 
 The location where the function is called (not where its declared).
-To find what mr.This will be refencing to will be determined by inspecting the call site
+To find what mr.This will be refencing to will be determined by inspecting the call site.
+
+The 4 Rules:
+1. Called with new: Use the newly constructed object
+2. Explicit: Called with call or apply or bind 
+3. Implicit: Called with context object owning the call
+4. Default: global object
+
+Rule 1: Default binding:
+standalone function invocation
+default catch all rule wen none of the other rules apply
+variables declared in global scope i.e associated with global object
+
+
+funcation fun() {
+    console.log(this.a);
+}
+var a = 2;
+fun(); // output:2
+
+Rule 2: Implicit Binding:
+call site having a context object i.e referred to as an owning or containing object
+
+function fun() {
+    console.log(this.a);
+}
+var obj = {
+    a:2,
+    fun:fun
+};
+obj.foo();
+
+Rule 3: Explicit Binding:
+To force a function call to use a particular object for this binding, without putting a property function reference on the object
+Utilities
+call() and apply() //refer 30/1/2023
+makes to force the this to be a object we wanted to apply
+Hard bind:
+Bind(): (Updated): Returns a new function that is hard-coded to call the original function whith "this" context set as you specified 
+
+Rule 4: new Binding:
+Final rule for this binding
+Use the newly constructed object
+
+ES6: 
+Instead of the those four binding rules 
+arrow functions use lexical scoping for 'this' binding
+Syntactic replacement of self = this in pre-ES6 coding.
+--
+
+MVVM:
+similar to a mvc pattern
+but mvvm is for gui( Graphical user interface)
+Defines 3 layers:
+          send notification
+            ----->                        data binding
+model            View Model <----------------> view <----> User
+            <-----
+            changes state
+
+Mvvm and mvc:
+View model's responsibility is facilitating the transporatation of data between the view adn model
+the view is a simple presentation of the data given by the ViewModel
+
+Model: (just like mvc!!)
+refers to a domain model
+data access layer
+
+View:
+The view is a structure/appearance what a user sees on the screen
+
+View model:
+Unlike mvc, mvvm has binder which automates communication between the view and its bound properties in the view model
+
+--
+ng new <foldername>
+?Angular routing Yes
+?Stylesheet CSS
 
 
