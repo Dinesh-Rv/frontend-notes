@@ -1,4 +1,4 @@
-Notes:
+JavaScript Notes:
 1.
 call stack { 
     Where all the Gec are kept
@@ -451,4 +451,18 @@ ng new <foldername>
 ?Angular routing Yes
 ?Stylesheet CSS
 
+--
+The PAINfull Es6:
 
+Block scoped Declaration:
+  Immediately invoked function expression(IIFE):
+-> Which runs the moment is is invoked or called in the js event loop
+-> Prevents pollution of the global js scope
+-> You can able to name your IIFEs or leave them anonymous, naming will be usefull when there are several IIFE's
+
+  let Declarations:
+Instead of var which always declares variable attached to the enclosing function or global scope,
+we can use let to make use of a block scope variable
+-> The let declarations attach to the block scope but are not initialized until they appear in the block
+-> Will cause reference error from accessing a let declared variable too early
+-> let declared references will be carried forward to a temporal dead zone (TDZ) 
