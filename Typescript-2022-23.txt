@@ -1,0 +1,43 @@
+3/02/2023
+TypeScript?
+Programming language from microsoft
+superset of js
+Has some additional features on top of javaScript
+Javascript with typeChecking
+
+Some of the features:
+-> Static Typing:
+    statically-typed:(c++, java)
+        variable will be initialized with a datatype and cannot be applied with another datatype,
+        a static type for a variable
+    dynamically-typed:(js, python)
+        variable can be applied with another datatype object without error, eg number type variable can be applied with string after, type will be determined or be changed at runtime(leads to problems)
+
+-> Code completion
+->Refactoring
+->Shorthand notations
+
+Drawbacks:
+->Compilation (Transpilation)
+->Discipline in coding
+
+Developing Environment:
+->node Js
+npm i -g typescript
+tsc -v
+
+Built In Type:
+js: number, string, boolean, null, undefined, object
+ts: any, unknown, never, enum, tuple
+
+arrays:
+let numbers: number[] = [];
+
+tuples:
+let user: [number, string]
+
+enums:
+enum size {small = 1, medium, large} /////medium = 2 and large = 3...
+
+Type alias:
+just like you did in java eg.Employee and using the type alias for adding in array

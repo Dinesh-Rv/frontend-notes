@@ -1,0 +1,86 @@
+Angular Notes:
+02/02/23
+Why Angular?
+Angular is a framework that is used to build client side application
+It was day before yesterday i assume, my trainer was asking how does a cricbuzz website work
+Cricbuzz is nothing but a cricket live score portal, which shows scores without reloading
+Even i had no idea how does it work, in es5 js i was re-rendering the whole segment for a simple click event.
+Such that, Angular is specially great for building single page application where part of the view will be refereshed asynchronously without having to reload the entire page
+
+-> Angular provides modular approach
+-> Re-usable code
+-> Validation, routing etc. which makes development quicker and easier
+-> Unit testable and easily maintainale code
+-> Product of Google which makes use of Microsoft's Typescript
+
+Angular Cli:
+Used to create projects, generate application and library code and perform a variety of ongoing development tasks such as testing, bundling and deployment.
+Install:
+npm install -g @angular/cli
+installed necessary angular npm packages and other dependencies
+cd: change directory
+ng serve: launches the server, watched your files and rebuilds the app as you make changes to those files.
+
+
+Components:
+Main Building block for angular applications
+components contains metadata and template which represent the view
+Selector: custom html tag that is used to represent the component
+
+Each component consists of:
+
+->An Html Template that declared what renders on the page
+-> A typescript class that defines behaviour
+-> A CSS selector that defines how the component is used in a template
+->Optionally, CSS styles applied to the template
+
+to create a component run the ng generate component <component-name>. (ng g c <component-name>)
+
+Components Lifecycle(Lifecycle Hooks):
+(Inserting a hook in the flow of the angular to make changes)
+Components have more lifecycle hooks than directives
+We can implement the lifecycle hook interfaces and use the respective methods to tap into any lifecycle moments
+Constructor is not a lifecycle hook, its a typescipt feature
+Lifecycle hooks in components
+
+
+
+Angular executes hook methods in sequential manner
+
+ngOnChanges():
+    Respond when Angular sets or resets data-bound input properties
+Whenever the data on input property changes
+
+
+ngOnInit():
+Initialize the directive or component after angular first displays the data-bound properties and sets the directive or componrnt input properties.
+Once the component is loaded into the dom the component constructor and on init will be called
+
+
+ngDoCheck:
+Detect and act upon changes that angular can't or won't detect on its own
+
+ngAfterContentInit:
+Respond after angular projects external content into the component's view
+
+ngAfterContentChecked:
+Respond after angular checks the content projected into the directive or component.
+
+ngAfterViewInit:
+Respond after angular initiallize the component's views and child views, or the view that contains the directive.
+
+ngAfterViewChecked: 
+Respond after angular checks the component's views and child views, or the view that contains the directive
+
+ngOnDestroy:
+will be called once when the component is removed from the dom
+on destoy will fix memory leak
+
+
+Directives:
+Classes that add additional behaviour to elements in youir angular applications
+common built in directives: 
+ngClass: Adds and removes a set of css classes
+ngStyle: Adds and removes a set of html styles
+ngModel
+
