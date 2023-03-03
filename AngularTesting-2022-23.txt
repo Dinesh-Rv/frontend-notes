@@ -1,0 +1,37 @@
+1/03/2022
+Angular Unit Testing
+
+Jasmine & Karma
+Setup & Teardown (cleaning up)
+-> beforeAll - called once before all the specs described are runned
+-> afterAll - once all the specs are finished running
+-> beforeEach - before each "it"(spec) has runned
+-> AfterEach - after each "it" function has runned
+
+Karma: command line tool
+lets run jasmine test from the cmd line
+re runs the tests automatically
+lets us use jasmine as part of a development toolchain which requires a cmd line 
+
+
+use ng test for running test for your angular project
+
+use x before to temporarily disable a spec 
+use f before to focus on a spec
+
+jasmine supports Behavior driven development
+Test suites =>(Test Specs =>(Test Exceptations))
+We can run jasmine from the browser, but usually we run via another tool call karma on the command line
+
+Testing pipe and classes
+-> We can test any isolated class with a simple jasmine spec file.
+-> You have most of the tools already to write isolated tests for directives, components, pipes and so on
+-> However our code often requires other code to work, it has dependencies.
+
+Mocks and Spies 
+-> Testing with real dependencies resuls in tight coupling and brittle code.
+->The goal is to test pieces of code in isolation
+-> We do this by creating Mocks or by using real instances of classes but taking control of them with Spys.
+
+Angular test bed
+

@@ -1,0 +1,90 @@
+Rxjs!
+Rxjs(Reactive extensions for JavaScript) is a library for reactive programming using observables that makes it easier to compose asynchronous or callback-based code.
+
+Rxjs consists of:
+ => Observable
+=> Satelite Data Types - Observers, Schedulers, Subjects
+=> Operators
+              =>Array methods(map, filter and reduce)
+
+Observable: Its a data stream
+
+subscibe: It'll listen to the Observable for data changes/updates 
+
+Thats look lifeless right, lets take a eg,
+
+Lets take a youtube channel
+Observable - video(Data) is posted every single day in a channel
+                   - Any changes that happened in the channel
+                   -Content
+                          -video
+                         -community message
+Subscribe - A person subscribed to the channel
+                 - The person(subscriber) will get notified everytime the channel owner posts a video
+                 - There is a change in data
+
+Rxjs Operators
+where a person(subscriber) may or may not watched our video and for organising data there are certain operators for each subscriber
+    -filter
+    -map
+
+Lets cut it out,, now
+
+Observable:
+Represents the idea of an invokable collection of future values or events.
+Observables are like functions with zero arguments, but generalize those to allow multiple values.
+They are not like EventEmitters
+
+Observer:
+An Observer is a consumer of values delivered by an observable
+const observer = {
+    next: x => What should i do with new data?
+    error: err => What if the line breaks?
+    complete: () => to ensure what to do with the final output
+};
+
+Subject:
+A subject is a special type of observable that allows values to be multicasted to many observers.
+Subscription:
+Represents the execution of an Observable, is primarily useful for cancelling the execution
+
+Subject and behaviour subject:
+When you have multiple observers
+Use a subject: 
+if you want updates as they come
+
+Use behavior Subject
+You want the latest update as soon as they subscribe
+
+
+So,
+Rxjs introduces Observables, A new Push system for JavaScript
+An Observable is a producer of multiple values, "pushing" them to observers(consumers)
+
+
+Operators in Rxjs:
+Output observable
+Source observable
+Emit
+Higher order observables
+First order(inner ) observables
+Project Function
+
+Map: Applies a given project function to each value emitted by the source observable and emits the resulting values as an observable
+
+combineLatest: combines multiple observables to create an observable wose values are calculated from the latest values if each of its input observables
+
+withLatestFrom: combine the source observable with other observables to create an observable whose values are calculated from the latest value of each, (But only when the source emits).
+
+switchMap: projects each source value to an observable which is merged in the output Observable, Emitting values only from the most recently projected observable
+(the recently projected)
+
+concatMap: projects each source value to an observable which is merged in the output observable, In a serialized fashion,waiting for each one to complete brfore merging the next
+serialized, waiting for each one to complete
+
+mergeMap: projects each source value to an observable which is merged in the output observable
+
+throttle: Emits a value from the source observable, then ignores subsequent source values for a duration, determined by another observable, then repeats the process.
+
+mergeAll: Converts a higher order observable to a first order observable which concurrently delivers all values that are emitted in the inner observables
+
